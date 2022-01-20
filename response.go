@@ -1,0 +1,40 @@
+package dedge
+
+import "encoding/xml"
+
+//RetrieveHotelResponse ...
+type RetrieveHotelResponse struct {
+	XMLName  xml.Name `xml:"message"`
+	XmlnsXsi string   `xml:"xmlns:xsi,attr"`
+	XmlnsXsd string   `xml:"xmlns:xsd,attr"`
+	Rooms    Rooms    `xml:"rooms"`
+}
+
+//ProvideBookingResponse ...
+type ProvideBookingResponse struct {
+	XMLName  xml.Name   `xml:"message"`
+	XmlnsXsi string     `xml:"xmlns:xsi,attr"`
+	XmlnsXsd string     `xml:"xmlns:xsd,attr"`
+	Success  string     `xml:"success"`
+	Bookings []Bookings `xml:"bookings"`
+}
+
+//FailureMessage ...
+type FailureMessage struct {
+	XMLName xml.Name `xml:"message"`
+	Failure struct {
+		Type    int    `xml:"type,attr"`
+		Message string `xml:"message,attr"`
+		Comment string `xml:"comment"`
+	} `xml:"failure"`
+}
+
+//WarningMessage ...
+type WarningMessage struct {
+	XMLName xml.Name `xml:"message"`
+	Warning struct {
+		Type    int    `xml:"type,attr"`
+		Message string `xml:"message,attr"`
+		Comment string `xml:"comment"`
+	} `xml:"warning"`
+}
