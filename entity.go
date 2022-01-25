@@ -42,47 +42,47 @@ type Occupancy struct {
 
 type Authentication struct {
 	XMLName  xml.Name `xml:"authentication"`
-	Login    string   `xml:"login,attr"`
-	Password string   `xml:"password,attr"`
+	Login    string   `xml:"login,attr" validate:"required"`
+	Password string   `xml:"password,attr" validate:"required"`
 }
 
 type InventoryUpdate struct {
-	XMLName    xml.Name     `xml:"inventoryUpdate"`
-	HotelId    string       `xml:"hotelId,attr"`
-	RoomUpdate []RoomUpdate `xml:"room"`
+	XMLName    xml.Name
+	HotelId    string       `xml:"hotelId,attr" validate:"required"`
+	RoomUpdate []RoomUpdate `xml:"room" validate:"dive"`
 }
 
 type RoomUpdate struct {
 	XMLName    xml.Name
-	Id         string `xml:"id,attr"`
+	Id         int `xml:"id,attr" validate:"required"`
 	Inventory  Inventory
-	RateUpdate []RateUpdate `xml:"rate"`
+	RateUpdate []RateUpdate `xml:"rate" validate:"dive"`
 }
 
 type Inventory struct {
 	XMLName      xml.Name       `xml:"inventory"`
-	Availability []Availability `xml:"availability"`
+	Availability []Availability `xml:"availability" validate:"dive"`
 }
 
 type Availability struct {
 	XMLName  xml.Name
-	From     string `xml:"from,attr"`
-	To       string `xml:"to,attr"`
-	Quantity int    `xml:"quantity,attr"`
+	From     string `xml:"from,attr" validate:"required"`
+	To       string `xml:"to,attr" validate:"required"`
+	Quantity int    `xml:"quantity,attr" validate:"required"`
 }
 
 type RateUpdate struct {
 	XMLName      xml.Name
 	Currency     string         `xml:"currency,attr"`
-	RateCode     string         `xml:"rateCode,attr"`
+	RateCode     string         `xml:"rateCode,attr" validate:"required,max=50"`
 	RateName     string         `xml:"rateName,attr"`
-	PlanningRate []PlanningRate `xml:"planning"`
+	PlanningRate []PlanningRate `xml:"planning" validate:"dive"`
 }
 
 type PlanningRate struct {
 	XMLName     xml.Name
-	From        string `xml:"from,attr"`
-	To          string `xml:"to,attr"`
+	From        string `xml:"from,attr" validate:"required"`
+	To          string `xml:"to,attr" validate:"required"`
 	MinimumStay int    `xml:"minimumStay,attr"`
 	MaximumStay int    `xml:"maximumStay,attr"`
 	UnitPrice   string `xml:"unitPrice,attr"`
