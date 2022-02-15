@@ -1,6 +1,9 @@
 package dedge
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"github.com/go-playground/validator"
+)
 
 //InventoryUpdateRequest ...
 type InventoryUpdateRequest struct {
@@ -17,4 +20,10 @@ type ProvideBookingRequest struct {
 	From     string
 	To       string
 	Duration string
+}
+
+func (req *InventoryUpdateRequest) Validate() error {
+	v := validator.New()
+
+	return v.Struct(req)
 }
