@@ -10,6 +10,12 @@ type RetrieveHotelResponse struct {
 	Rooms    Rooms    `xml:"rooms"`
 }
 
+//InventoryUpdateResponse ...
+type InventoryUpdateResponse struct {
+	XMLName xml.Name `xml:"message"`
+	Success string   `xml:"success"`
+}
+
 //ProvideBookingResponse ...
 type ProvideBookingResponse struct {
 	XMLName  xml.Name   `xml:"message"`
