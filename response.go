@@ -38,3 +38,16 @@ type WarningMessage struct {
 		Comment string `xml:"comment"`
 	} `xml:"warning"`
 }
+
+func BindErrorResponse(errorType int, errorComment string) FailureMessage {
+	var errResp FailureMessage
+	if errorComment == "" {
+		errorComment = ErrorCommentMap[errorType]
+	}
+
+	errResp.Failure.Type = errorType
+	errResp.Failure.Message = ErrorMessageMap[errorType]
+	errResp.Failure.Comment = errorComment
+
+	return errResp
+}
