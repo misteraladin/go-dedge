@@ -45,6 +45,7 @@ type WarningMessage struct {
 	} `xml:"warning"`
 }
 
+//BindErrorResponse ...
 func BindErrorResponse(errorType int, errorComment string) FailureMessage {
 	var errResp FailureMessage
 	if errorComment == "" {
