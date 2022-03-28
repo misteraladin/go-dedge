@@ -68,7 +68,7 @@ type Availability struct {
 	XMLName  xml.Name
 	From     string `xml:"from,attr" validate:"required"`
 	To       string `xml:"to,attr" validate:"required"`
-	Quantity int    `xml:"quantity,attr" validate:"required"`
+	Quantity int    `xml:"quantity,attr"`
 }
 
 type RateUpdate struct {
