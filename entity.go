@@ -159,7 +159,7 @@ type Booking struct {
 	ChildCount    int      `xml:"childCount,attr,omitempty"`
 	InfantCount   int      `xml:"infantCount,attr,omitempty"`
 	Customer      Customer
-	Rooms         []RoomBooking `xml:"rooms"`
+	Rooms         RoomsBooking
 }
 
 type Customer struct {
@@ -205,8 +205,8 @@ type Comment struct {
 type RoomBooking struct {
 	XMLName xml.Name `xml:"room"`
 	Id      string   `xml:"id,attr"`
-	Stays   []Stay   `xml:"stays"`
-	Guests  []Guest  `xml:"guests"`
+	Stays   Stays    `xml:"stays"`
+	Guests  Guests   `xml:"guests"`
 }
 
 type Stay struct {
@@ -224,4 +224,19 @@ type Guest struct {
 	Title     string   `xml:"title,attr,omitempty"`
 	AgeRange  int      `xml:"ageRange,attr,omitempty"`
 	BirthDate string   `xml:"birthDate,attr,omitempty"`
+}
+
+type RoomsBooking struct {
+	XMLName xml.Name `xml:"rooms"`
+	Room    []RoomBooking
+}
+
+type Stays struct {
+	XMLName xml.Name `xml:"stays"`
+	Stay    []Stay
+}
+
+type Guests struct {
+	XMLName xml.Name `xml:"guests"`
+	Guest   []Guest
 }
