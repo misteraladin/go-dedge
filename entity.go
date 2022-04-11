@@ -26,7 +26,7 @@ type Rate struct {
 	XMLName xml.Name
 	Code    string `xml:"code,attr"`
 	Name    string `xml:"name,attr"`
-	Regime  string `xml:"regime,attr"`
+	Regime  string `xml:"regime,attr,omitempty"`
 }
 
 type Occupancies struct {
