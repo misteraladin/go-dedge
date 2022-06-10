@@ -152,7 +152,7 @@ type Booking struct {
 	TotalAmount   int      `xml:"totalAmount,attr"`
 	PaidAmount    int      `xml:"paidAmount,attr"`
 	DueAmount     int      `xml:"dueAmount,attr"`
-	PayableAmount float64  `xml:"payableAmount,attr"`
+	PayableAmount int      `xml:"payableAmount,attr"`
 	Origin        string   `xml:"origin,attr,omitempty"`
 	PaxCount      int      `xml:"paxCount,attr"`
 	AdultCount    int      `xml:"adultCount,attr,omitempty"`
