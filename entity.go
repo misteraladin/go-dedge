@@ -107,18 +107,24 @@ type RoomRate struct {
 }
 
 type RoomPlanning struct {
-	RoomId      int
-	Currency    string
-	RateCode    string
-	RateName    string
-	StartDate   string
-	EndDate     string
-	MinimumStay int
-	MaximumStay int
-	Price       string
-	NoArrival   bool
-	NoDeparture bool
-	IsClosed    bool
+	RoomId           int
+	Currency         string
+	RateCode         string
+	RateName         string
+	StartDate        string
+	EndDate          string
+	MinimumStay      int
+	MaximumStay      int
+	Price            string
+	NoArrival        int
+	NoDeparture      int
+	IsClosed         int
+	IsSetMinStay     int
+	IsSetMaxStay     int
+	IsSetUnitPrice   int
+	IsSetNoDeparture int
+	IsSetNoArrival   int
+	IsSsetIsClosed   int
 }
 
 type AvailabilityUpdate struct {
