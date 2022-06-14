@@ -81,14 +81,14 @@ type RateUpdate struct {
 
 type PlanningRate struct {
 	XMLName     xml.Name
-	From        string  `xml:"from,attr" validate:"required"`
-	To          string  `xml:"to,attr" validate:"required"`
-	MinimumStay *int    `xml:"minimumStay,attr"`
-	MaximumStay *int    `xml:"maximumStay,attr"`
-	UnitPrice   *string `xml:"unitPrice,attr"`
-	NoArrival   *bool   `xml:"noArrival,attr"`
-	NoDeparture *bool   `xml:"noDeparture,attr"`
-	IsClosed    *bool   `xml:"isClosed,attr"`
+	From        string `xml:"from,attr" validate:"required"`
+	To          string `xml:"to,attr" validate:"required"`
+	MinimumStay string `xml:"minimumStay,attr"`
+	MaximumStay string `xml:"maximumStay,attr"`
+	UnitPrice   string `xml:"unitPrice,attr"`
+	NoArrival   string `xml:"noArrival,attr"`
+	NoDeparture string `xml:"noDeparture,attr"`
+	IsClosed    string `xml:"isClosed,attr"`
 }
 
 type RoomAllotment struct {
