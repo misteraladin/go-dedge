@@ -207,7 +207,7 @@ type Distributor struct {
 type Comment struct {
 	XMLName xml.Name `xml:"comment"`
 	Name    string   `xml:"name,attr"`
-	Text    string
+	Text    string   `xml:",chardata"`
 }
 
 type RoomBooking struct {
