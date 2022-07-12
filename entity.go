@@ -165,6 +165,7 @@ type Booking struct {
 	ChildCount    int      `xml:"childCount,attr,omitempty"`
 	InfantCount   int      `xml:"infantCount,attr,omitempty"`
 	Customer      Customer
+	Distributor   Distributor
 	Rooms         RoomsBooking
 }
 

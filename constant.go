@@ -90,7 +90,7 @@ var ErrorCommentMap = map[int]string{
 //provide booking
 var ActionMap = map[string]string{
 	"pending":  "Create",
-	"issued":   "Modify",
+	"issued":   "Create",
 	"canceled": "Cancel",
 }
 
