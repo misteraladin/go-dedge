@@ -221,7 +221,7 @@ type Stay struct {
 	XMLName   xml.Name `xml:"stay"`
 	Date      string   `xml:"date,attr"`
 	Quantity  int      `xml:"quantity,attr"`
-	UnitPrice float64  `xml:"unitPrice,attr"`
+	UnitPrice string   `xml:"unitPrice,attr"`
 	RateCode  string   `xml:"rateCode,attr"`
 }
 
